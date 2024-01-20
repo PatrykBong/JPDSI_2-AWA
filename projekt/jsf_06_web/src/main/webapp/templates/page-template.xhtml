@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/main-template.xhtml">
+
+	<ui:define name="title">
+		Typowanie
+	</ui:define>
+
+	<ui:define name="content">
+
+		<p:panel header="MENU" styleClass="bottom-space" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
+			<ul>
+				<li>1</li>
+				<li><p:link outcome="/pages/app/mojeTypy" value="moje typy"/></li>
+				<li><p:link outcome="/pages/app/tabelaWynikow" value="tabela wyników"/></li>
+				<li><p:link outcome="/pages/pracownia/test" value="tu nie wolno"/></li>
+				<li>
+					<h:form style="display:inline;">
+						<h:commandButton value="Wyloguj" action="#{loginBB.doLogout()}" />
+					</h:form>
+				</li>
+			</ul>
+		</p:panel>
+
+		<ui:insert name="pageContent"></ui:insert>
+
+	</ui:define>
+	
+</ui:composition>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/page-template.xhtml">
+<ui:define name="pageContent">
+	<center><h1>Tabela wyników</h1></center>
+	<p:messages />
+	<h:form id="form-table" style="margin-bottom:1em;">
+
+		<p:dataTable value="#{tabelaWynikowBB.list}" var="p">
+
+			<p:column priority="5">
+				<f:facet name="header">
+					<h:outputText value="imię" />
+				</f:facet>
+				<h:outputText value="#{p.imie}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="nazwisko" />
+				</f:facet>
+				<h:outputText value="#{p.nazwisko}" />
+			</p:column>
+			
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="punkty" />
+				</f:facet>
+				<h:outputText value="#{p.punkty}" />
+			</p:column>
+
+		</p:dataTable>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>
